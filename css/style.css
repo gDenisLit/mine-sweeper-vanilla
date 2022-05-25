@@ -54,7 +54,7 @@ td  {
 
 .mine {
     background-color: red;
-    background-image: url(/Mine-sweeper/mine.png);
+    background-image: url(https://gdenislit.github.io/Mine-sweeper/mine.png);
     background-size: 100%;
 
 }
@@ -96,7 +96,7 @@ button {
     border-color: #f1f5f6;
     
     cursor: pointer;
-    background-image: url(/Mine-sweeper/alive.png);
+    background-image: url(https://gdenislit.github.io/Mine-sweeper/alive.png);
     background-color: transparent;
     background-size: 100%;
     border: none;
