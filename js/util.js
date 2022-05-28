@@ -214,7 +214,7 @@ function hitMine(cell, elCell) {
   var elLife = getSelector('.life')
   elLife.innerHTML = gGame.livesRemain
   checkGameOver()
-} 
+}
 
 function hideCell(cell, elCell) {
   if (cell.isMine) {
@@ -233,7 +233,7 @@ function hideCell(cell, elCell) {
 
 function unHitMine(cell, elCell) {
   cell.isShown = false
-  
+
   gGame.showCount--
   gGame.livesRemain++
 
@@ -246,6 +246,32 @@ function unHitMine(cell, elCell) {
 function changeBgcImg(element, img) {
   element.style.backgroundImage = `url(https://gdenislit.github.io/Mine-sweeper/img/${img}.png)`
 }
+
+function peekIntoCell(cell, elCell) {
+  if (cell.isMine) {
+    elCell.classList.add('mine')
+    return
+  }
+  if (cell.mineAroundCount === 0) elCell.classList.add('reveal')
+  else {
+    elCell.classList.add('reveal', `n${cell.mineAroundCount}`)
+    elCell.innerText = cell.mineAroundCount
+  }
+}
+
+function closeCell(cell, elCell) {
+  if (cell.isMine) {
+    elCell.classList.remove('mine')
+    return
+  }
+  if (cell.mineAroundCount === 0) elCell.classList.remove('reveal')
+  else {
+    elCell.classList.remove('reveal', `n${cell.mineAroundCount}`)
+    elCell.innerText = ''
+  }
+}
+
+
 
 
 

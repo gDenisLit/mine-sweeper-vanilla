@@ -143,7 +143,7 @@ function giveHint(rowIdx, colIdx) {
 
         var currCell = gBoard[cellNegs[i].i][cellNegs[i].j]
         var elCurrCell = getElCell(cellNegs[i].i, cellNegs[i].j)
-        revealCell(currCell, elCurrCell)
+        peekIntoCell(currCell, elCurrCell)
     }
     setTimeout(() => {
         for (var i = 0; i < cellNegs.length; i++) {
@@ -151,7 +151,7 @@ function giveHint(rowIdx, colIdx) {
             var currCell = gBoard[cellNegs[i].i][cellNegs[i].j]
             var elCurrCell = getElCell(cellNegs[i].i, cellNegs[i].j)
 
-            hideCell(currCell, elCurrCell)
+            closeCell(currCell, elCurrCell)
 
             var elHint = getSelector('.hint')
             changeBgcImg(elHint, 'hint')

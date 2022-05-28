@@ -86,7 +86,7 @@ function checkGameOver() {
 }
 
 function hintMode() {
-    if (gGame.hintMode !== 0) {
+    if (gGame.hintsLeft !== 0) {
         gGame.hintMode = true
 
         var elHint = getSelector('.hint')
