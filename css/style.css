@@ -1,42 +1,69 @@
-html {
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
+body {
+    background-color: #13191d;
 }
 
-body {
-    min-height: 100%;
-    min-width: 100%;
-    margin: 0;
-
+.main-box {
     display: flex;
-    flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
 
-    background-color: #282e33;
-    color: #f1f5f6;
-    text-align: center;
+    width: 610px;
+    height: 580px;
+
+    margin-left: 25%;
+    margin-top: 3%;
+
+    background-color: #a6b6c16e;
+
+    outline: 10px;
+    outline-style: auto;
+    outline-color: #f1f5f6;
+
+    box-shadow: 0px 0px 71px 0px #f1f5f658;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    height: 560px;
+
+    margin-left: 10px;
+
+    box-sizing: border-box;
+}
+
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 180px;
+    height: 560px;
+
+    box-sizing: border-box;
 }
 
 .table-container {
     display: flex;
-    flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-
-    height: 350px;
-    width: 350px;
-
-    position: relative;
-    top: 10%;
+    width: 400px;
+    height: 400px;
+    
+    background-color: rgb(74, 81, 87);
+    box-shadow: 0px 0px 10px 3px #000;
+    box-shadow: 0px 0px 5px 3px #000 inset;
 }
-
 table {
-    margin-top: 10px;
+    box-shadow: 0px 0px 24px 0px #f1f5f665;
 }
 
-td  {
+
+td {
     background-color: lightgrey;
     text-align: center;
     padding: 2px;
@@ -46,17 +73,324 @@ td  {
     
     height: 25px;
     width: 25px;
+
+    box-shadow: 0px 0px 1px 1px #000 inset;
+}
+.main-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    height: 150px;
 }
 
-.reveal {
-    background-color: rgb(168, 168, 168);
+.logo {
+    width: 180px;
+    height: 150px;
+
+    background-color: #5a0d24;
+    box-shadow: 0px 0px 10px 3px #000; 
+
+    background-image: url(https://gdenislit.github.io/Mine-sweeper/img/mine.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    text-align: left;
+
+    transition: 1s;
+}
+
+.display-score {
+  background-position: 500px;
+}
+
+.modes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 180px;
+    height: 400px;
+
+    background-color: #0f1044;
+
+    border: 2px;
+    border-color: black;
+
+    box-shadow: 0px 0px 10px 3px #000; 
+}
+
+.manual-mode {
+    width: 160px;
+    height: 40px;
+
+    cursor: pointer;
+    transition: all 0.5s;
+
+    color: #f1f5f6;
+    font-family:'Lucida Sans';
+
+    background-color: #3546538c;
+    
+    box-shadow: 0px 0px 4px 1px #f1f5f665;
+}
+
+.manual-mode-on {
+    box-shadow: 0px 0px 21px 4px #000 inset;
+}
+
+.difficulty {
+    width: 160px;
+    height: 40px;
+
+    cursor: pointer;
+    transition: all 0.5s;
+
+    background-color: #3546538c;
+    box-shadow: 0px 0px 4px 1px #f1f5f665;
+
+}
+
+
+.difficulty:active { box-shadow: 0px 0px 0px 0px #000;}
+
+.difficulty .b {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+
+    color: #f1f5f6;
+    font-family:'Lucida Sans';
+}
+
+.difficulty .b:after {
+    content: ' 4x4';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -30px;
+    transition: 0.5s;
+}
+
+.difficulty:hover .b {
+    padding-right: 30px;
+}
+
+.difficulty:hover .b:after {
+    opacity: 1;
+    right: 0;
+}
+
+.difficulty .a {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+
+    color: #f1f5f6;
+    font-family:'Lucida Sans';
+}
+
+.difficulty .a:after {
+    content: ' 8x8';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -30px;
+    transition: 0.5s;
+}
+
+.difficulty:hover .a {
+    padding-right: 30px;
+}
+
+.difficulty:hover .a:after {
+    opacity: 1;
+    right: 0;
+}
+
+.difficulty .p {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+
+    color: #f1f5f6;
+    font-family:'Lucida Sans';
+}
+
+.difficulty .p:after {
+    content: ' 12x12';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -30px;
+    transition: 0.5s;
+}
+
+.difficulty:hover .p {
+    padding-right: 45px;
+}
+
+.difficulty:hover .p:after {
+    opacity: 1;
+    right: 0;
+}
+
+.help-panel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 70px;
+
+    background-color: #0f1044;
+    border: 2px;
+    border-color: black;
+
+    box-shadow: 0px 0px 10px 3px #000; 
+}
+
+.game-panel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 70px;
+
+    background-color: #0f1044;
+    border: 2px;
+    border-color: black;
+
+    box-shadow: 0px 0px 10px 3px #000;
+}
+
+.life {
+    height: 60px;
+    width: 100px;
+
+    background-image: url(https://gdenislit.github.io/Mine-sweeper/img/lifefull.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: bottom;
+    background-position: left;
+
+    color: #f1f5f6;
+    font-size: 48px;
+    text-align: right;
+}
+
+.hint {
+    height: 60px;
+    width: 100px;
+
+    background-image: url(https://gdenislit.github.io/Mine-sweeper/img/hint.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: left;
+
+    color: #f1f5f6;
+    font-size: 48px;
+    text-align: right;
+
+    cursor: pointer;
+    
+    border: none;
+}
+
+
+.safe {
+    height: 60px;
+    width: 100px;
+
+    background-image: url(https://gdenislit.github.io/Mine-sweeper/img/safe-off.png);
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: left;
+
+    color: #f1f5f6;
+    font-size: 48px;
+    text-align: right;
+
+    cursor: pointer;
+
+    background-color: transparent;
+    border: none;
+
+}
+
+.flags {
+    height: 60px;
+    width: 120px;
+
+    background-image: url(https://gdenislit.github.io/Mine-sweeper/img/flag1.png);
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: bottom;
+
+    color: #f1f5f6;
+    font-size: 28px;
+    text-align: center;
+}
+
+.smiley {
+    height: 60px;
+    width: 120px;
+
+    background-image: url(https://gdenislit.github.io/Mine-sweeper/img/normal.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: bottom;
+    background-color: transparent;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.timer {
+    height: 60px;
+    width: 120px;
+
+    background-image: url(https://gdenislit.github.io/Mine-sweeper/img/stoper.png);
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: bottom;
+
+    color: #f1f5f6;
+    font-size: 28px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+
+    color: #f1f5f6;
+    font-family:'Lucida Sans';
+    font-size: 18px;
+    padding-right: 180px;
 }
 
 .mine {
     background-color: red;
-    background-image: url(https://gdenislit.github.io/Mine-sweeper/mine.png);
+    background-image: url(https://gdenislit.github.io/Mine-sweeper/img/mine.png);
     background-size: 100%;
+}
 
+.plant {
+    background-image: url(https://gdenislit.github.io/Mine-sweeper/img/mine.png);
+    background-size: 100%;
+}
+
+.reveal {
+    background-color: rgb(141, 139, 139);
+    
 }
 
 .empty {
@@ -72,33 +406,77 @@ td  {
 .n7 {color: yellow;}
 .n8 {color: darkslategray;}
 
-img {
-    width: 20px;
-    height: 20px;
+.marked {
+    background-image: url(https://gdenislit.github.io/Mine-sweeper/img/flag.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-footer {
-    background-color: rgb(70, 70, 70);
-    color: whitesmoke;
-
-    position: sticky;
-    width: 100%;
-    top: 700px;
+.safe-cell {
+    background-color: rgb(29, 223, 33);
 }
 
-button {
-    position: relative;
-    top: 10%;
+.best-score {
+    font-family: sans-serif;
+    font-size: 14px;
+   
+    transition: 1s;
+    color: #f1f5f6;
 
-    height: 30px;
-    width: 30px;
+    padding: 2px;
+    display: none;
+}
 
-    border-color: #f1f5f6;
-    
+.BOOM7 {
+    width: 160px;
+    height: 40px;
+
     cursor: pointer;
-    background-image: url(https://gdenislit.github.io/Mine-sweeper/alive.png);
-    background-color: transparent;
-    background-size: 100%;
-    border: none;
+    transition: all 0.5s;
+
+    color: #f1f5f6;
+    font-family:'Lucida Sans';
+
+    background-color: #3546538c;
+    
+    box-shadow: 0px 0px 4px 1px #f1f5f665;
 }
+
+.BOOM7-on {
+    box-shadow: 0px 0px 21px 4px #000 inset;
+}
+
+.undo {
+    width: 160px;
+    height: 40px;
+
+    cursor: pointer;
+    transition: all 0.5s;
+
+    color: #f1f5f6;
+    font-family:'Lucida Sans';
+
+    background-color: #3546538c;
+    
+    box-shadow: 0px 0px 4px 1px #f1f5f665; 
+}
+
+.undo:active {
+    box-shadow: 0px 0px 21px 4px #000 inset;
+}
+
+.choice {
+    width: 160px;
+    height: 15px;
+
+    color: #f1f5f6;
+    font-family:'Lucida Sans';
+
+    font-size: 12px;
+    text-align: center;
+}
+
+
+
 

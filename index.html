@@ -1,25 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MineSweeper</title>
     <link rel="stylesheet" href="css/style.css">
+    <title>Mine-Sweeper</title>
 </head>
 <body onload="init()">
-    <h1>Welcome to MineSweeper</h1> 
-    <button></button>
-    <div class="table-container">
+    <div class="main-box">
+
+        <div class="side-panel">
+            <div class="logo">
+                <div class="best-score"></div>
+            </div>
+
+            <div class="modes">
+                <button onclick="undo()" class="undo">Undo</button>
+                
+                <div class="choice">Difficulty</div>
+                <button onclick="tableSize(this) "data-size="4" 
+                    class="difficulty"><span class="b">Begginer</span></button>
+                    
+                <button onclick="tableSize(this) "data-size="8" 
+                    class="difficulty"><span class="a">Amature</span></button>
+
+                <button onclick="tableSize(this) "
+                    data-size="12" class="difficulty"><span class="p">Pro</span></button>
+
+                <div class="choice">Special Modes</div>
+                <button onclick="manualMode()" class="manual-mode">Manual Mode</button>
+                <button onclick="boom7Mode()" class="BOOM7">7 BOOM!</button>
+            </div>
+
+        </div>
+        <div class="game">
+            <div class="main-panel">
+                <div class="help-panel">
+                    <div class="life">3</div>
+                    <button onclick="hintMode()" class="hint">3</button>
+                    <button onclick="safeClick()" class="safe">3</button>
+                </div>
+                <div class="game-panel">
+                    <div class="flags">000</div>
+                    <button onclick="init()" class="smiley"></button>
+                    <div class="timer">000</div>
+                </div>
+            </div>
+            <div class="table-container"></div>
+        </div>
     </div>
-
-    <footer><p>-Mine-Sweeper-  Denis Lit</p></footer>
-    <!-- <script src="js/guid-lines.js"></script> -->
+    <footer>-Denis Lit-</footer>
     <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/game.js"></script>
-    
 </body>
-
 </html>
-
